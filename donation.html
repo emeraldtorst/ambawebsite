@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support AMBA - Austrian Mongolian Business Association</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .donation-card {
+            transition: all 0.3s ease;
+        }
+        
+        .donation-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #B8860B;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white bg-opacity-95 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex-shrink-0 flex items-center">
+                        <div class="h-12 w-12 rounded-full bg-blue-900 flex items-center justify-center text-white font-bold text-lg">AM</div>
+                        <span class="ml-3 text-xl font-bold text-blue-900">AMBA</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link text-blue-900 hover:text-blue-700 font-medium">Home</a>
+                    <a href="donation.html" class="nav-link text-blue-900 hover:text-blue-700 font-medium">Support Us</a>
+                    <a href="events.html" class="nav-link text-blue-900 hover:text-blue-700 font-medium">Events</a>
+                    <a href="contact.html" class="nav-link text-blue-900 hover:text-blue-700 font-medium">Contact</a>
+                </div>
+                <div class="flex md:hidden items-center">
+                    <button type="button" class="text-blue-900" id="mobile-menu-button">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-blue-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6" data-aos="fade-up">Support Our Mission</h1>
+            <p class="text-xl max-w-3xl mx-auto mb-8" data-aos="fade-up" data-aos-delay="100">
+                Your contribution helps strengthen Austrian-Mongolian relations through business development and cultural exchange.
+            </p>
+            <div class="h-1 w-20 bg-yellow-600 mx-auto mb-10" data-aos="fade-up" data-aos-delay="200"></div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">How Your Support Helps</h2>
+                <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+                    Every donation directly supports our programs and initiatives that build bridges between Austria and Mongolia.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-blue-100 text-blue-900 mb-6">
+                        <i data-feather="users"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">Business Networking Events</h3>
+                    <p class="text-gray-600">Facilitating connections between Austrian and Mongolian businesses through conferences, workshops, and networking events.</p>
+                </div>
+                
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-blue-100 text-blue-900 mb-6">
+                        <i data-feather="book-open"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">Cultural Programs</h3>
+                    <p class="text-gray-600">Promoting mutual understanding through cultural events, language courses, and educational exchanges.</p>
+                </div>
+                
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-blue-100 text-blue-900 mb-6">
+                        <i data-feather="bar-chart-2"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">Economic Research</h3>
+                    <p class="text-gray-600">Producing market analyses and research reports to support business decisions and investment opportunities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Options -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Make a Donation</h2>
+                <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+                    Choose an amount or enter a custom donation to support our work. All contributions are tax-deductible.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="donation-card bg-white p-8 rounded-lg shadow-md text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-3xl font-bold text-blue-900 mb-4">€50</div>
+                    <h3 class="text-xl font-semibold text-blue-900 mb-4">Supporter</h3>
+                    <p class="text-gray-600 mb-6">Helps fund cultural events and networking activities.</p>
+                    <button class="w-full py-3 bg-blue-900 text-white rounded-md hover:bg-blue-800 transition">Donate €50</button>
+                </div>
+                
+                <div class="donation-card bg-white p-8 rounded-lg shadow-md text-center border-2 border-yellow-600" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-3xl font-bold text-blue-900 mb-4">€150</div>
+                    <h3 class="text-xl font-semibold text-blue-900 mb-4">Partner</h3>
+                    <p class="text-gray-600 mb-6">Supports business development programs and research.</p>
+                    <button class="w-full py-3 bg-yellow-600 text-white rounded-md hover:bg-yellow-700 transition">Donate €150</button>
+                </div>
+                
+                <div class="donation-card bg-white p-8 rounded-lg shadow-md text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-3xl font-bold text-blue-900 mb-4">€500</div>
+                    <h3 class="text-xl font-semibold text-blue-900 mb-4">Patron</h3>
+                    <p class="text-gray-600 mb-6">Enables major initiatives and long-term projects.</p>
+                    <button class="w-full py-3 bg-blue-900 text-white rounded-md hover:bg-blue-800 transition">Donate €500</button>
+                </div>
+            </div>
+            
+            <div class="bg-white p-8 rounded-lg shadow-md" data-aos="fade-up">
+                <h3 class="text-2xl font-bold text-blue-900 mb-6 text-center">Custom Amount</h3>
+                <div class="max-w-md mx-auto">
+                    <div class="flex items-center border border-gray-300 rounded-md overflow-hidden mb-6">
+                        <span class="px-4 py-3 bg-gray-100 text-gray-700">€</span>
+                        <input type="number" placeholder="Enter amount" class="flex-1 px-4 py-3 outline-none">
+                    </div>
+                    <button class="w-full py-3 bg-blue-900 text-white rounded-md hover:bg-blue-800 transition">Donate Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Other Ways to Support -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Other Ways to Support</h2>
+                <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+                    Financial contributions are just one way to support our mission. Explore other opportunities to get involved.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gray-50 p-8 rounded-lg" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full bg-blue-900 flex items-center justify-center text-white mr-4">
+                            <i data-feather="user-plus"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-900">Become a Member</h3>
+                    </div>
+                    <p class="text-gray-600 mb-6">Join our community of professionals and gain access to exclusive events, resources, and networking opportunities.</p>
+                    <a href="#" class="text-blue-900 font-medium hover:text-yellow-600 flex items-center">
+                        Learn about membership
+                        <i data-feather="arrow-right" class="ml-2 h-4 w-4"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-lg" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full bg-blue-900 flex items-center justify-center text-white mr-4">
+                            <i data-feather="briefcase"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-900">Corporate Partnership</h3>
+                    </div>
+                    <p class="text-gray-600 mb-6">Partner with us to support specific programs or events and gain visibility within our community.</p>
+                    <a href="contact.html" class="text-blue-900 font-medium hover:text-yellow-600 flex items-center">
+                        Contact us about partnerships
+                        <i data-feather="arrow-right" class="ml-2 h-4 w-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">AMBA</h3>
+                    <p class="text-blue-200 mb-4">Austrian Mongolian Business Association</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-blue-200 hover:text-white">
+                            <i data-feather="facebook"></i>
+                        </a>
+                        <a href="#" class="text-blue-200 hover:text-white">
+                            <i data-feather="twitter"></i>
+                        </a>
+                        <a href="#" class="text-blue-200 hover:text-white">
+                            <i data-feather="linkedin"></i>
+                        </a>
+                        <a href="#" class="text-blue-200 hover:text-white">
+                            <i data-feather="instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-blue-200 hover:text-white">Home</a></li>
+                        <li><a href="donation.html" class="text-blue-200 hover:text-white">Support Us</a></li>
+                        <li><a href="events.html" class="text-blue-200 hover:text-white">Events</a></li>
+                        <li><a href="contact.html" class="text-blue-200 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-blue-200 hover:text-white">Membership</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white">Business Directory</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white">Market Reports</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white">News & Updates</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-blue-200">
+                        <li class="flex items-start">
+                            <i data-feather="mail" class="mr-2 mt-1 h-4 w-4"></i>
+                            <span>info@amba.at</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="map-pin" class="mr-2 mt-1 h-4 w-4"></i>
+                            <span>Business Street 123, 1010 Vienna, Austria</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="phone" class="mr-2 mt-1 h-4 w-4"></i>
+                            <span>+43 1 234 5678</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-blue-800 mt-8 pt-8 text-sm text-blue-300 text-center">
+                <p>© 2023 Austrian Mongolian Business Association. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize animations
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+        
+        // Initialize feather icons
+        feather.replace();
+        
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            alert('Mobile menu would open here. Implementation depends on your specific design needs.');
+        });
+    </script>
+</body>
+</html>

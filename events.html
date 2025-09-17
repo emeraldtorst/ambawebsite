@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - Austrian Mongolian Business Association</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .event-card {
+            transition: all 0.3s ease;
+        }
+        
+        .event-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #B8860B;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .event-filter button.active {
+            background-color: #002147;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white bg-opacity-95 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex-shrink-0 flex items-center">
+                        <div class="h-12 w-12 rounded-full bg-blue-900 flex items-center justify-center text-white font-bold text-lg">AM</div>
+                        <span class="ml-3 text-xl font-bold text-blue-900">AMBA</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link text-blue-900 hover:text-blue-700 font-medium">Home</a>
+                    <a href="donation.html" class="nav-link text-blue-900 hover:text-blue-700 font-medium">Support Us</a>
+                    <a href="events.html" class="nav-link text-blue-900 hover:text-blue-700 font-medium">Events</a>
+                    <a href="contact.html" class="nav-link text-blue-900 hover:text-blue-700 font-medium">Contact</a>
+                </div>
+                <div class="flex md:hidden items-center">
+                    <button type="button" class="text-blue-900" id="mobile-menu-button">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-blue-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6" data-aos="fade-up">AMBA Events</h1>
+            <p class="text-xl max-w-3xl mx-auto mb-8" data-aos="fade-up" data-aos-delay="100">
+                Join us for networking, cultural exchange, and business development opportunities.
+            </p>
+            <div class="h-1 w-20 bg-yellow-600 mx-auto mb-10" data-aos="fade-up" data-aos-delay="200"></div>
+        </div>
+    </section>
+
+    <!-- Event Filters -->
+    <section class="py-8 bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="event-filter flex flex-wrap justify-center gap-4">
+                <button class="px-4 py-2 rounded-md border border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white transition active" data-filter="all">
+                    All Events
+                </button>
+                <button class="px-4 py-2 rounded-md border border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white transition" data-filter="upcoming">
+                    Upcoming
+                </button>
+                <button class="px-4 py-2 rounded-md border border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white transition" data-filter="past">
+                    Past Events
+                </button>
+                <button class="px-4 py-2 rounded-md border border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white transition" data-filter="business">
+                    Business
+                </button>
+                <button class="px-4 py-2 rounded-md border border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white transition" data-filter="cultural">
+                    Cultural
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Events -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-blue-900 mb-12 text-center" data-aos="fade-up">Upcoming Events</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <div class="event-card bg-white rounded-lg overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="100" data-category="upcoming business">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('http://static.photos/business/640x360/10')"></div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-yellow-600 mb-2">
+                            <i data-feather="calendar" class="mr-2 h-4 w-4"></i>
+                            <span>October 15, 2023</span>
+                            <i data-feather="map-pin" class="ml-4 mr-2 h-4 w-4"></i>
+                            <span>Vienna</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">Austria-Mongolia Business Forum</h3>
+                        <p class="text-gray-600 mb-4">Annual conference bringing together business leaders from both countries to discuss opportunities.</p>
+                        <a href="#" class="text-blue-900 font-medium hover:text-yellow-600 flex items-center">
+                            Register now
+                            <i data-feather="arrow-right" class="ml-2 h-4 w-4"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="event-card bg-white rounded-lg overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="200" data-category="upcoming cultural">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('http://static.photos/culture/640x360/11')"></div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-yellow-600 mb-2">
+                            <i data-feather="calendar" class="mr-2 h-4 w-4"></i>
+                            <span>November 5, 2023</span>
+                            <i data-feather="map-pin" class="ml-4 mr-2 h-4 w-4"></i>
+                            <span>Online</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">Mongolian Culture Night</h3>
+                        <p class="text-gray-600 mb-4">An evening celebrating Mongolian traditions, music, and cuisine with special guests.</p>
+                        <a href="#" class="text-blue-900 font-medium hover:text-yellow-600 flex items-center">
+                            Register now
+                            <i data-feather="arrow-right" class="ml-2 h-4 w-4"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="event-card bg-white rounded-lg overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="300" data-category="upcoming business">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('http://static.photos/network/640x360/12')"></div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-yellow-600 mb-2">
+                            <i data-feather="calendar" class="mr-2 h-4 w-4"></i>
+                            <span>December 2, 2023</span>
+                            <i data-feather="map-pin" class="ml-4 mr-2 h-4 w-4"></i>
+                            <span>Salzburg</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">Networking Breakfast</h3>
+                        <p class="text-gray-600 mb-4">Monthly networking event for members to connect and share business opportunities.</p>
+                        <a href="#" class="text-blue-900 font-medium hover:text-yellow-600 flex items-center">
+                            Register now
+                            <i data-feather="arrow-right" class="ml-2 h-4 w-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Past Events -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-blue-900 mb-12 text-center" data-aos="fade-up">Past Events</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="event-card bg-white rounded-lg overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="100" data-category="past business">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('http://static.photos/business/640x360/13')"></div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-yellow-600 mb-2">
+                            <i data-feather="calendar" class="mr-2 h-4 w-4"></i>
+                            <span>June 10, 2023</span>
+                            <i data-feather="map-pin" class="ml-4 mr-2 h-4 w-4"></i>
+                            <span>Vienna</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">Investment Seminar</h3>
+                        <p class="text-gray-600 mb-4">Exploring investment opportunities in Mongolia's growing economy for Austrian businesses.</p>
+                        <a href="#" class="text-blue-900 font-medium hover:text-yellow-600 flex items-center">
+                            View photos
+                            <i data-feather="arrow-right" class="ml-2 h-4 w-4"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="event-card bg-white rounded-lg overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="200" data-category="past cultural">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('http://static.photos/culture/640x360/14')"></div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-yellow-600 mb-2">
+                            <i data-feather="calendar" class="mr-2 h-4 w-4"></i>
+                            <span>April 22, 2023</span>
+                            <i data-feather="map-pin" class="ml-4 mr-2 h-4 w-4"></i>
+                            <span>Graz</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">Mongolian Food Festival</h3>
+                        <p class="text-gray-600 mb-4">A culinary journey through Mongolia with traditional dishes and cooking demonstrations.</p>
+                        <a href="#" class="text-blue-900 font-medium hover:text-yellow-600 flex items-center">
+                            View photos
+                            <i data-feather="arrow-right" class="ml-2 h-4 w-4"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="event-card bg-white rounded-lg overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="300" data-category="past business">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('http://static.photos/network/640x360/15')"></div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-yellow-600 mb-2">
+                            <i data-feather="calendar" class="mr-2 h-4 w-4"></i>
+                            <span>February 8, 2023</span>
+                            <i data-feather="map-pin" class="ml-4 mr-2 h-4 w-4"></i>
+                            <span>Linz</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">Tech Partnership Forum</h3>
+                        <p class="text-gray-600 mb-4">Connecting Austrian tech companies with Mongolian partners for collaboration.</p>
+                        <a href="#" class="text-blue-900 font-medium hover:text-yellow-600 flex items-center">
+                            View photos
+                            <i data-feather="arrow-right" class="ml-2 h-4 w-4"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="event-card bg-white rounded-lg overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="400" data-category="past cultural">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('http://static.photos/art/640x360/16')"></div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-yellow-600 mb-2">
+                            <i data-feather="calendar" class="mr-2 h-4 w-4"></i>
+                            <span>December 15, 2022</span>
+                            <i data-feather="map-pin" class="ml-4 mr-2 h-4 w-4"></i>
+                            <span>Vienna</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">Mongolian Art Exhibition</h3>
+                        <p class="text-gray-600 mb-4">Showcasing contemporary Mongolian artists and their works in Vienna.</p>
+                        <a href="#" class="text-blue-900 font-medium hover:text-yellow-600 flex items-center">
+                            View photos
+                            <i data-feather="arrow-right" class="ml-2 h-4 w-4"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="event-card bg-white rounded-lg overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="500" data-category="past business">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('http://static.photos/business/640x360/17')"></div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-yellow-极速6 MB-2">
+                            <i data-feather="calendar" class="mr-2 h-4 w-4"></i>
+                            <span>October 20, 2022</span>
+                            <i data-feather="map-pin" class="ml-4 mr-2 h-4 w-4"></i>
+                            <span>Innsbruck</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">Renewable Energy Conference</h3>
+                        <p class="text-gray-600 mb-4">Discussing sustainable energy solutions and partnerships between Austria and Mongolia.</p>
+                        <a href="#" class="text-blue-900 font-medium hover:text-yellow-600 flex items-center">
+                            View photos
+                            <i data-feather="arrow-right" class="ml-2 h-4 w-4"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="event-card bg-white rounded-lg overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="600" data-category="past cultural">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('http://static.photos/music/640x360/18')"></div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-yellow-600 mb-2">
+                            <i data-feather="calendar" class="mr-2 h-4 w-4"></i>
+                            <span>August 5, 2022</span>
+                            <i data-feather="map-pin" class="ml-4 mr-2 h-4 w-极速"></i>
+                            <span>Salzburg</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">Traditional Music Performance</h3>
+                        <p class="text-gray-600 mb-4">An evening of traditional Mongolian music and throat singing performances.</p>
+                        <a href="#" class="text-blue-900 font-medium hover:text-yellow-600 flex items-center">
+                            View photos
+                            <i data-feather="arrow-right" class="ml-2 h-4 w-4"></i>
+                        </极速>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-blue-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-6" data-aos="fade-up">Stay Updated</h2>
+            <p class="text-xl max-w-3xl mx-auto mb-8" data-aos="fade-up" data-aos-delay="100">
+                Subscribe to our newsletter to receive updates about upcoming events and news.
+            </p>
+            
+            <div class="max-w-md mx-auto" data-aos="fade-up" data-aos-delay="200">
+                <form class="flex flex-col sm:flex-row gap-4">
+                    <input type="email" placeholder="Your email address" class="flex-1 px-4 py-3 rounded-md text-gray-900 outline-none">
+                    <button type="submit" class="px-6 py-3 bg-yellow-600 text-white rounded-md hover:bg-yellow-700 transition">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">AMBA</h3>
+                    <p class="text-blue-200 mb-4">Austrian Mongolian Business Association</p>
+                    <极速 class="flex space-x-4">
+                        <a href="#" class="text-blue-200 hover:text-white">
+                            <i data-feather="facebook"></i>
+                        </a>
+                        <a href="#" class="text-blue-200 hover:text-white">
+                            <i data-feather="twitter"></i>
+                        </a>
+                        <a href="#" class="text-blue-200 hover:text-white">
+                            <i data-feather="linkedin"></i>
+                        </a>
+                        <a href="#" class="text-blue-200 hover:text-white">
+                            <i data-feather="instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-blue-200 hover:text-white">Home</a></li>
+                        <li><a href="donation.html" class="text-blue-200 hover:text-white">Support Us</a></极速>
+                        <li><a href="events.html" class="text-blue-200 hover:text-white">Events</a></li>
+                        <li><a href="contact.html" class="text-blue-200 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semib极速 mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-blue-200 hover:text-white">Membership</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white">Business Directory</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white">Market Reports</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white">News & Updates</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-blue-200">
+                        <li class="flex items-start">
+                            <i data-feather="mail" class="mr-2 mt-1 h-4 w-4"></i>
+                            <span>info@amba.at</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="map-pin" class="mr-2 mt-1 h-4 w-4"></i>
+                            <span>Business Street 123, 1010 Vienna, Austria</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="phone" class="mr-2 mt-1 h-4 w-4"></i>
+                            <span>+43 1 234 5678</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-blue-800 mt-8 pt-8 text-sm text-blue-300 text-center">
+                <p>© 2023 Austrian Mongolian Business Association. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize animations
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+        
+        // Initialize feather icons
+        feather.replace();
+        
+        // Event filtering
+        const filterButtons = document.querySelectorAll('.event-filter button');
+        const events = document.querySelectorAll('.event-card');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                const filter = button.getAttribute('data-filter');
+                
+                events.forEach(event => {
+                    if (filter === 'all') {
+                        event.style.display = 'block';
+                    } else {
+                        const eventCategories = event.getAttribute('data-category').split(' ');
+                        if (eventCategories.includes(filter)) {
+                            event.style.display = 'block';
+                        } else {
+                            event.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+        
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            alert('Mobile menu would open here. Implementation depends on your specific design needs.');
+        });
+    </script>
+</body>
+</html>
