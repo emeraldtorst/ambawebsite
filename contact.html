@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Austrian Mongolian Business Association</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #B8860B;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .contact-info-card {
+            transition: all 0.3s ease;
+        }
+        
+        .contact-info-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white bg-opacity-95 shadow-md">
+        <div class="max极速-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex-shrink-0 flex items-center">
+                        <div class="h-12 w-12 rounded-full bg-blue-900 flex items-center justify-center text-white font-bold text-lg">AM</div>
+                        <span class="ml-3 text-xl font-bold text-blue-900">AMBA</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link text-blue-900 hover:text-blue-700 font-medium">Home</a>
+                    <a href="donation.html" class="nav-link text-blue-900 hover:text-blue-700 font-medium">Support Us</a>
+                    <a href="events.html" class="nav-link text-blue-900 hover:text-blue-700 font-medium">Events</a>
+                    <a href="contact.html" class="nav-link text-blue-900 hover:text-blue-700 font-medium">Contact</a>
+                </div>
+                <div class="flex md:hidden items-center">
+                    <button type="button" class="text-blue-900" id="mobile-menu-button">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-blue-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6" data-aos="fade-up">Get In Touch</h1>
+            <p class="text-xl max-w-3xl mx-auto mb-8" data-aos="fade-up" data-aos-delay="100">
+                We'd love to hear from you. Reach out to us with questions, suggestions, or partnership opportunities.
+            </p>
+            <div class="h-1 w-20 bg-yellow-600 mx-auto mb-10" data-aos="fade-up" data-aos-delay="200"></div>
+        </div>
+    </section>
+
+    <!-- Contact Information -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="contact-info-card bg-white p-8 rounded-lg shadow-md text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 text-blue-900 mb-6">
+                        <i data-feather="mail"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">Email Us</h3>
+                    <p class="text-gray-600 mb-4">Send us a message and we'll respond as soon as possible.</p>
+                    <a href="mailto:info@amba.at" class="text-blue-900 font-medium hover:text-yellow-600">info@amba.at</a>
+                </div>
+                
+                <div class="contact-info-card bg-white p-8 rounded-lg shadow-md text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 text-blue-900 mb-6">
+                        <i data-feather="map-pin"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">Visit Us</h3>
+                    <p class="text-gray-600 mb-4">Our office is located in the heart of Vienna.</p>
+                    <address class="text-blue-900 not-italic">Business Street 123<br>1010 Vienna, Austria</address>
+                </div>
+                
+                <div class="contact-info-card bg-white p-8 rounded-lg shadow-md text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 text-blue-900 mb-6">
+                        <i data-feather="phone"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">Call Us</h3>
+                    <p class="text-gray-600 mb-4">Reach out during our office hours for immediate assistance.</p>
+                    <a href="tel:+4312345678" class="text-blue-900 font-medium hover:text-yellow-600">+43 1 234 5678</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form & Map -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div data-aos="fade-right">
+                    <h2 class="text-3xl font-bold text-blue-900 mb-6">Send Us a Message</h2>
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-900 focus:border-blue-900" required>
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-900 focus:border-blue-900" required>
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                            <input type="text" id="subject" name="subject" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-900 focus:border-blue-900" required>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-900 focus:border-blue-900" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full py-3 bg-blue-900 text-white rounded-md hover:bg-blue-800 transition">Send Message</button>
+                    </form>
+                </div>
+                
+                <div data-aos="fade-left">
+                    <h2 class="text-3xl font-bold text-blue-900 mb-6">Our Location</h2>
+                    <div class="bg-white p-4 rounded-lg shadow-md">
+                        <!-- Placeholder for Google Maps embed -->
+                        <div class="h-96 bg-gray-200 rounded-md flex items-center justify-center">
+                            <div class="text-center">
+                                <i data-feather="map" class="h-12 w-12 text-gray-400 mx-auto mb-4"></i>
+                                <p class="text-gray-500">Google Maps would be embedded here</p>
+                                <p class="text-sm text-gray-400 mt-2">Business Street 123, 1010 Vienna, Austria</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h3 class="text-xl font-semibold text-blue-900 mb-4">Office Hours</h3>
+                        <ul class="space-y-2">
+                            <li class="flex justify-between">
+                                <span class="text-gray-600">Monday - Friday</span>
+                                <span class="text-blue-900 font-medium">9:00 AM - 5:00 PM</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span class="text-gray-600">Saturday</span>
+                                <span class="text-blue-900 font-medium">10:00 AM - 2:00 PM</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span class="text-gray-600">Sunday</span>
+                                <span class="text-blue-900 font-medium">Closed</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-blue-900 mb-6" data-aos="fade-up">Connect With Us</h2>
+            <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="100">
+                Follow us on social media to stay updated with the latest news, events, and insights.
+            </p>
+            
+            <div class="flex justify-center space-x-6" data-aos="fade-up" data-aos-delay="200">
+                <a href="#" class="h-12 w-12 rounded-full bg-blue-900 text-white flex items-center justify-center hover:bg-blue-800 transition">
+                    <i data-feather="facebook"></i>
+                </a>
+                <a href="#" class="h-12 w-12 rounded-full bg-blue-900 text-white flex items-center justify-center hover:bg-blue-800 transition">
+                    <i data-feather="twitter"></i>
+                </a>
+                <a href="#" class="h-12 w-12 rounded-full bg-blue-900 text-white flex items-center justify-center hover:极速-800 transition">
+                    <i data-feather="linkedin"></i>
+                </a>
+                <a href="#" class="h-12 w-12 rounded-full bg-blue-900 text-white flex items-center justify-center hover:bg-blue-800 transition">
+                    <i data-feather="instagram"></i>
+                </a>
+                <a href="#" class="h-12 w-12 rounded-full bg-blue-900 text-white flex items-center justify-center hover:bg-blue-800 transition">
+                    <i data-feather="youtube"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-blue-900 mb-12 text-center" data-aos="fade-up">Frequently Asked Questions</h2>
+            
+            <div class="max-w-3xl mx-auto space-y-6">
+                <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-xl font-semibold text-blue-900 mb-3">How can I become a member of AMBA?</h3>
+                    <p class="text-gray-600">You can apply for membership through our website or by contacting our office directly. We offer different membership levels for individuals, businesses, and organizations.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-xl font-semibold text-blue-900 mb-3">Do I need to be Austrian or Mongolian to join?</h3>
+                    <p class="text-gray-600">No, AMBA welcomes anyone with an interest in Austrian-Mongolian relations, regardless of nationality. Our members include people from various backgrounds who share our mission.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="text-xl font-semibold text-blue-900 mb-3">How often do you hold events?</h3>
+                    <p class="text-gray-600">We typically hold several events each month, including networking sessions, cultural events, business forums, and educational workshops. Check our events calendar for upcoming activities.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="400">
+                    <h3 class="text-xl font-semibold text-blue-900 mb-3">Can I volunteer with AMBA?</h3>
+                    <p class="text-gray-600">Yes, we welcome volunteers to help with events, outreach, and various projects. Please contact us to learn about current volunteer opportunities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">AMBA</h3>
+                    <p class="text-blue-200 mb-4">Austrian Mongolian Business Association</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-blue-200 hover:text-white">
+                            <i data-feather="facebook"></i>
+                        </a>
+                        <a href="#" class="text-blue-200 hover:text-white">
+                            <i data-feather="twitter"></极速>
+                        </a>
+                        <a href="#" class="text-blue-200 hover:text-white">
+                            <i data-feather="linkedin"></i>
+                        </a>
+                        <a href="#" class="text-blue-200 hover:text-white">
+                            <i data-feather="instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-blue-200 hover:text-white">Home</a></li>
+                        <li><a href="donation.html" class="text-blue-200 hover:text-white">Support Us</a></li>
+                        <li><a href="events.html" class="text-blue-200 hover:text-white">Events</a></li>
+                        <li><a href="contact.html" class="text-blue-200 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-blue-200 hover:text-white">Membership</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white">Business Directory</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white">Market Reports</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white">News & Updates</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-blue-200">
+                        <li class="flex items-start">
+                            <i data-feather="mail" class="mr-2 mt-1 h-4 w-4"></i>
+                            <span>info@amba.at</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="map-pin" class="mr-2 mt-1 h-4 w-4"></i>
+                            <span>Business Street 123, 1010 Vienna, Austria</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="phone" class="mr-2 mt-1 h-4 w-4"></i>
+                            <span>+43 1 234 5678</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-blue-800 mt-8 pt-8 text-sm text-blue-300 text-center">
+                <p>© 2023 Austrian Mongolian Business Association. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize animations
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+        
+        // Initialize feather icons
+        feather.replace();
+        
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            alert('Mobile menu would open here. Implementation depends on your specific design needs.');
+        });
+        
+        // Form submission
+        const contactForm = document.querySelector('form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! We will get back to you soon.');
+                contactForm.reset();
+            });
+        }
+    </script>
+</body>
+</html>
